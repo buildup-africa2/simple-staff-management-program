@@ -10,6 +10,8 @@ It can be used in different places like Hospitals, schools, home, and workplaces
 - user can delete a staff information
 - User can get all their stafs
 - User can get just a single staff information
+- User can filter staffs
+- User can Suspend a staff
 
 ## How  to setup the application
 
