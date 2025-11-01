@@ -67,7 +67,11 @@ def get_all_staff():
 
 def filter_staff_by_role(role):
     """Filter staff members by their role."""
-    pass
+    users = []
+    for staff in staff_db:
+        if staff["role"] == role.lower():
+            users.append(staff)
+    return users
 
 
 def get_single_staff_member(staff_id):
