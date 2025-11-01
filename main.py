@@ -7,6 +7,7 @@ from utils import (
     get_all_staff,
     get_single_staff_member,
     suspend_staff_member,
+    filter_staff_by_role
 )
 
 
@@ -62,23 +63,31 @@ def main():
     #     print("Exiting the application.")
 
     # suspend a staff member by id
-    action = input("Do you want to suspend a staff member? (yes/no): ")
+    # action = input("Do you want to suspend a staff member? (yes/no): ")
+    # if action.lower() == "yes":
+    #     staff_id = input("Enter staff member's ID: ")
+    #     try:
+    #         suspended_staff = suspend_staff_member(staff_id)
+    #         print(f"Staff member with ID {staff_id} has been suspended. \n\n")
+    #         print(json.dumps(suspended_staff, indent=2))
+    #     except ValueError as e:
+    #         print(f"Failed to suspend staff member: {e}")
+    #     except PermissionError as e:
+    #         print(e)
+    # else:
+    #     print("Exiting the application.")
+
+    # filter staff members by role
+    action = input("Do you want to filter staff members by role? (yes/no): ")
     if action.lower() == "yes":
-        staff_id = input("Enter staff member's ID: ")
+        role = input("Enter staff member's role: ")
         try:
-            suspended_staff = suspend_staff_member(staff_id)
-            print(f"Staff member with ID {staff_id} has been suspended. \n\n")
-            print(json.dumps(suspended_staff, indent=2))
+            staff_members = filter_staff_by_role(role)
+            print(json.dumps(staff_members, indent=2))
         except ValueError as e:
-            print(f"Failed to suspend staff member: {e}")
-        except PermissionError as e:
-            print(e)
+            print(f"Failed to filter staff members: {e}")
     else:
         print("Exiting the application.")
-
-
-
-
 
 
 
